@@ -1,10 +1,9 @@
-import allRecipesData from "../../data/data";
-import { selectSearchTerm } from "../SearchTerm/searchTermSlice";
+// import { selectSearchTerm } from "../SearchTerm/searchTermSlice";
+import { selectSearchTerm } from "../search/slice";
 
-export const loadData = () => {
+export const fetchData = () => {
   return {
-    type: "allRecipes/loadData",
-    payload: allRecipesData,
+    type: "allRecipes/fetchData",
   };
 };
 
