@@ -1,23 +1,19 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchData, selectFilteredAllRecipes } from "../store/data/slice";
+import { fetchData, selectFilteredData } from "../store/data/slice";
 
 export default function Data() {
   const dispatch = useDispatch();
 
-  const allRecipes = useSelector(selectFilteredAllRecipes);
+  const data = useSelector(selectFilteredData);
 
-  console.log("allRecipes", allRecipes);
-
-  const onFirstRender = () => {
+  useEffect(() => {
     dispatch(fetchData());
-  };
-
-  useEffect(onFirstRender, [dispatch]);
+  }, []);
 
   return (
     <>
-      {allRecipes.map((recipe) => (
+      {data.map((recipe) => (
         <div key={recipe.uuid}>
           <p>{recipe.title}</p>
         </div>

@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import { allRecipesReducer } from "./data/slice";
+import { dataReducer } from "./data/slice";
 import { searchTermReducer } from "./search/slice";
 
 export const rootReducer = combineReducers({
-  allRecipes: allRecipesReducer,
+  data: dataReducer,
   searchTerm: searchTermReducer,
 });

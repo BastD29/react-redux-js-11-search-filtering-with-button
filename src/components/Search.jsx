@@ -5,11 +5,12 @@ import { clearSearchTerm, setSearchTerm } from "../store/search/slice";
 export default function Search() {
   const dispatch = useDispatch();
 
+  // !local state is used here because we do not need to access input from another component
   const [inputValue, setInputValue] = useState("");
 
   const onInputChangeHandler = (e) => {
     setInputValue(e.target.value);
-    console.log("e", e);
+    // console.log("e", e);
   };
 
   // !in the case we want to reuse the search in several components through the app,
